@@ -1,0 +1,50 @@
+<div class="header-actions">
+  <button
+    mat-icon-button
+    type="button"
+    aria-label="Notifications"
+    [matMenuTriggerFor]="notificationMenu"
+  >
+    <mat-icon [matBadge]="notificationsCount" matBadgeColor="warn">notifications</mat-icon>
+  </button>
+
+  <mat-menu #notificationMenu="matMenu" class="notification-menu">
+    <div class="notification-menu__header">Recent notifications</div>
+    @for (item of notifications; track item.title) {
+      <button mat-menu-item class="notification-item">
+        <div class="notification-item__content">
+          <span class="notification-item__title">{{ item.title }}</span>
+          <span class="notification-item__detail">{{ item.detail }}</span>
+        </div>
+      </button>
+    }
+    <button mat-menu-item>View all notifications</button>
+  </mat-menu>
+
+  <button
+    mat-icon-button
+    type="button"
+    aria-label="Account"
+    [matMenuTriggerFor]="profileMenu"
+  >
+    <img class="profile-avatar" [src]="user.avatar" [alt]="user.name" />
+  </button>
+
+  <mat-menu #profileMenu="matMenu" class="profile-menu">
+    <div class="profile-menu__summary">
+      <img class="profile-avatar profile-avatar--large" [src]="user.avatar" [alt]="user.name" />
+      <div>
+        <div class="profile-menu__name">{{ user.name }}</div>
+        <div class="profile-menu__role">{{ user.role }}</div>
+      </div>
+    </div>
+    <button mat-menu-item (click)="viewProfile()">
+      <mat-icon>person</mat-icon>
+      <span>View profile</span>
+    </button>
+    <button mat-menu-item (click)="logout()">
+      <mat-icon>logout</mat-icon>
+      <span>Logout</span>
+    </button>
+  </mat-menu>
+</div>

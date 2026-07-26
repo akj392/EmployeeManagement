@@ -1,0 +1,43 @@
+<section class="page-shell">
+  <div class="hero-card">
+    <img class="hero-avatar" [src]="profile.avatar" [alt]="profile.name" />
+    <div>
+      <p class="eyebrow">My Profile</p>
+      <h2>{{ profile.name }}</h2>
+      <p class="role">{{ profile.role }}</p>
+    </div>
+  </div>
+
+  <mat-card class="details-card" appearance="outlined">
+    <div class="card-header">
+      <h3>Personal Information</h3>
+      <button mat-stroked-button color="primary" [routerLink]="['/edit-profile']">Edit Profile</button>
+    </div>
+
+    <mat-divider></mat-divider>
+
+    <mat-list>
+      <mat-list-item>
+        <span matListItemTitle>Email</span>
+        <span matListItemLine>{{ profile.email }}</span>
+      </mat-list-item>
+      <mat-list-item>
+        <span matListItemTitle>Phone</span>
+        <span matListItemLine>{{ profile.phone }}</span>
+      </mat-list-item>
+      <mat-list-item>
+        <span matListItemTitle>Location</span>
+        <span matListItemLine>{{ profile.location }}</span>
+      </mat-list-item>
+      <mat-list-item>
+        <span matListItemTitle>Department</span>
+        <span matListItemLine>{{ profile.department }}</span>
+      </mat-list-item>
+    </mat-list>
+  </mat-card>
+
+  <mat-card class="details-card" appearance="outlined">
+    <h3>About</h3>
+    <p>{{ profile.bio }}</p>
+  </mat-card>
+</section>

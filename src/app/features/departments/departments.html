@@ -1,0 +1,28 @@
+<section class="departments-page">
+  <div class="page-header">
+    <div>
+      <p class="eyebrow">Organization</p>
+      <h2>Departments</h2>
+    </div>
+    <button mat-flat-button color="primary" [routerLink]="['/departments/add']">
+      <mat-icon>add</mat-icon>
+      Add Department
+    </button>
+  </div>
+
+  <div class="departments-grid">
+    @for (department of departments; track department.name) {
+      <mat-card class="department-card" appearance="outlined">
+        <div class="card-icon">
+          <mat-icon>{{ department.icon }}</mat-icon>
+        </div>
+        <div class="card-content">
+          <h3>{{ department.name }}</h3>
+          <p><strong>Head:</strong> {{ department.head }}</p>
+          <p><strong>Employees:</strong> {{ department.employeeCount }}</p>
+          <p><strong>Budget:</strong> {{ department.budget }}</p>
+        </div>
+      </mat-card>
+    }
+  </div>
+</section>

@@ -1,0 +1,72 @@
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.profile-avatar {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  object-fit: cover;
+  display: block;
+}
+
+.profile-avatar--large {
+  width: 48px;
+  height: 48px;
+}
+
+.notification-menu {
+  min-width: 260px;
+}
+
+.notification-menu__header {
+  padding: 8px 16px 4px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: #5f6368;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.notification-item {
+  height: auto !important;
+  padding: 8px 16px;
+  white-space: normal;
+}
+
+.notification-item__content {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.notification-item__title {
+  font-weight: 600;
+}
+
+.notification-item__detail {
+  font-size: 0.82rem;
+  color: #5f6368;
+}
+
+.profile-menu {
+  min-width: 220px;
+}
+
+.profile-menu__summary {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 8px 16px 12px;
+}
+
+.profile-menu__name {
+  font-weight: 600;
+}
+
+.profile-menu__role {
+  font-size: 0.82rem;
+  color: #5f6368;
+}

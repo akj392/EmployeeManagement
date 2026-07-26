@@ -1,0 +1,43 @@
+<section class="page-shell">
+  <div class="page-header">
+    <div>
+      <p class="eyebrow">Organization</p>
+      <h2>Add Department</h2>
+    </div>
+  </div>
+
+  <mat-card class="form-card" appearance="outlined">
+    <form [formGroup]="departmentForm" (ngSubmit)="submit()">
+      <div class="form-grid">
+        <mat-form-field appearance="outline">
+          <mat-label>Department Name</mat-label>
+          <input matInput formControlName="name" placeholder="e.g. Marketing" />
+        </mat-form-field>
+
+        <mat-form-field appearance="outline">
+          <mat-label>Department Head</mat-label>
+          <mat-select formControlName="head">
+            @for (head of heads; track head) {
+              <mat-option [value]="head">{{ head }}</mat-option>
+            }
+          </mat-select>
+        </mat-form-field>
+
+        <mat-form-field appearance="outline">
+          <mat-label>Budget</mat-label>
+          <input matInput formControlName="budget" placeholder="e.g. $120K" />
+        </mat-form-field>
+
+        <mat-form-field appearance="outline">
+          <mat-label>Description</mat-label>
+          <textarea matInput formControlName="description" rows="4" placeholder="Briefly describe the department"></textarea>
+        </mat-form-field>
+      </div>
+
+      <div class="actions">
+        <button mat-stroked-button type="button" (click)="cancel()">Cancel</button>
+        <button mat-flat-button color="primary" type="submit">Save Department</button>
+      </div>
+    </form>
+  </mat-card>
+</section>

@@ -1,0 +1,45 @@
+<section class="page-shell">
+  <div class="page-header">
+    <div>
+      <p class="eyebrow">Analytics</p>
+      <h2>Reports</h2>
+    </div>
+    <button mat-flat-button color="primary">
+      <mat-icon>download</mat-icon>
+      Export All
+    </button>
+  </div>
+
+  <div class="metric-grid">
+    @for (metric of metrics; track metric.label) {
+      <mat-card class="metric-card" appearance="outlined">
+        <p class="metric-label">{{ metric.label }}</p>
+        <h3>{{ metric.value }}</h3>
+        <span class="metric-hint">{{ metric.hint }}</span>
+      </mat-card>
+    }
+  </div>
+
+  <mat-card class="reports-card" appearance="outlined">
+    <div class="table-header">
+      <h3>Featured reports</h3>
+      <button mat-stroked-button>New Report</button>
+    </div>
+
+    <div class="report-grid">
+      @for (report of reports; track report.title) {
+        <div class="report-item" [style.--accent]="report.accent">
+          <div class="report-icon">
+            <mat-icon>{{ report.icon }}</mat-icon>
+          </div>
+          <div class="report-body">
+            <div class="report-category">{{ report.category }}</div>
+            <h4>{{ report.title }}</h4>
+            <p>{{ report.description }}</p>
+            <span class="report-trend">{{ report.trend }}</span>
+          </div>
+        </div>
+      }
+    </div>
+  </mat-card>
+</section>

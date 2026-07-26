@@ -1,0 +1,13 @@
+<mat-toolbar color="primary">
+  @if (isMobile()) {
+    <button mat-icon-button type="button" (click)="menuClicked.emit()" aria-label="Toggle navigation menu">
+      <mat-icon>menu</mat-icon>
+    </button>
+  }
+
+  <span>Employee Portal</span>
+
+  <span class="spacer"></span>
+
+  <app-header-actions></app-header-actions>
+</mat-toolbar>

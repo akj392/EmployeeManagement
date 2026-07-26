@@ -1,0 +1,35 @@
+<h2>Dashboard</h2>
+
+<div class="dashboard-grid">
+
+    @for(card of cards; track card.title){
+
+    <mat-card>
+
+        <mat-card-content>
+
+            <div class="card-content">
+
+                <div>
+
+                    <h3>{{card.title}}</h3>
+
+                    <h1>{{card.value}}</h1>
+
+                </div>
+
+                <mat-icon>
+
+                    {{card.icon}}
+
+                </mat-icon>
+
+            </div>
+
+        </mat-card-content>
+
+    </mat-card>
+
+    }
+
+</div>

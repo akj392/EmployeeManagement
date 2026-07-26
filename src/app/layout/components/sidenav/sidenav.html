@@ -1,0 +1,35 @@
+<div class="logo">
+
+    <mat-icon>business</mat-icon>
+
+    <span>Employee Portal</span>
+
+</div>
+
+<mat-nav-list>
+
+    @for(item of menuItems; track item.route){
+
+        <a
+            mat-list-item
+            [routerLink]="item.route"
+            routerLinkActive="active-link"
+            [routerLinkActiveOptions]="{ exact: item.route === '/dashboard' || item.route === '/employees' || item.route === '/departments' || item.route === '/reports' || item.route === '/profile' }">
+
+            <mat-icon matListItemIcon>
+
+                {{ item.icon }}
+
+            </mat-icon>
+
+            <span matListItemTitle>
+
+                {{ item.label }}
+
+            </span>
+
+        </a>
+
+    }
+
+</mat-nav-list>
